@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Project Hub | Portfolio</title>
+    <title>Report Hub | Directory</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -11,54 +11,79 @@
 
     <header class="navbar">
         <div class="container">
-            <h1 class="logo">Project<span>Hub</span></h1>
-            <p class="about-text">A collection of AI-generated web experiments.</p>
+            <h1 class="logo">Report<span>Hub</span></h1>
+            <p class="about-text">Central directory for AI-generated notes and reports.</p>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h2>My AI-Generated Web Projects</h2>
-            <p>Exploring the intersection of artificial intelligence and front-end development.</p>
-        </div>
-    </section>
-
-    <main class="container">
-        <div class="project-grid">
-            
-            <article class="card">
-                <div class="card-content">
-                    <h3>Data Dashboard</h3>
-                    <p>A sleek visualization tool generated to handle real-time data metrics.</p>
-                    <a href="./projects/file1.html" class="btn">View Project</a>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-content">
-                    <h3>Landing Page Alpha</h3>
-                    <p>A high-conversion landing page template with modern glassmorphism.</p>
-                    <a href="./projects/file2.html" class="btn">View Project</a>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-content">
-                    <h3>Interactive Quiz</h3>
-                    <p>A dynamic logic-based quiz application built using vanilla structures.</p>
-                    <a href="./projects/file3.html" class="btn">View Project</a>
-                </div>
-            </article>
-
-            </div>
-    </main>
+    <main class="container" id="directory-container">
+        </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 AI Project Hub. All rights reserved.</p>
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub Profile</a>
+            <p>&copy; 2026 Report Hub.</p>
         </div>
     </footer>
 
+    <script>
+        /* STEP 1: UPDATE THIS LIST WHEN YOU ADD NEW FILES
+           Just follow the pattern below. Add new folders or new files.
+        */
+        const myFolders = [
+            {
+                folderTitle: "Projects Directory",
+                files: [
+                    { name: "Risk Report 1", path: "./projects/Risk Report-saved-1.html" },
+                    { name: "Risk Report 2", path: "./projects/Risk Report-saved-2.html" },
+                    { name: "Risk Report 3", path: "./projects/Risk Report-saved-3.html" }
+                ]
+            },
+            {
+                folderTitle: "Financial Reports",
+                files: [
+                    { name: "Q1 Summary", path: "./financials/q1-summary.html" },
+                    { name: "Budget Overview", path: "./financials/budget.html" }
+                ]
+            }
+            // You can add up to 5 (or more) folders here!
+        ];
+
+        /* STEP 2: THE BUILDER (You don't need to touch this part!)
+           This loops through your list above and creates the HTML automatically.
+        */
+        const container = document.getElementById('directory-container');
+
+        myFolders.forEach(folder => {
+            // Create a section for the folder
+            const folderSection = document.createElement('section');
+            folderSection.className = 'folder-section';
+
+            // Add the folder title
+            const folderHeading = document.createElement('h2');
+            folderHeading.className = 'folder-title';
+            folderHeading.innerText = folder.folderTitle;
+            folderSection.appendChild(folderHeading);
+
+            // Create a grid for the files inside this folder
+            const grid = document.createElement('div');
+            grid.className = 'file-grid';
+
+            // Create a card for each file
+            folder.files.forEach(file => {
+                const card = document.createElement('a');
+                card.className = 'file-card';
+                card.href = file.path;
+                
+                card.innerHTML = `
+                    <div class="file-icon">📄</div>
+                    <div class="file-name">${file.name}</div>
+                `;
+                grid.appendChild(card);
+            });
+
+            folderSection.appendChild(grid);
+            container.appendChild(folderSection);
+        });
+    </script>
 </body>
 </html>
