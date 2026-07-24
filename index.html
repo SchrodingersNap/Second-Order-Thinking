@@ -2,14 +2,42 @@
 layout: default
 ---
 
-<h1>Welcome to my Series</h1>
-<p>Here are my latest articles:</p>
+<style>
+  .post-card {
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: #ffffff;
+  }
+  .post-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .post-card a {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #0366d6;
+  }
+  .post-meta {
+    font-size: 0.85rem;
+    color: #586069;
+    margin-top: 6px;
+  }
+</style>
 
-<ul>
+<h2>Latest Articles</h2>
+
+<div class="posts-list">
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a> 
-      <small>({{ post.date | date: "%B %d, %Y" }})</small>
-    </li>
+    <div class="post-card">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <div class="post-meta">
+        Published on {{ post.date | date: "%B %d, %Y" }}
+        {% if post.author %} • by {{ post.author }}{% endif %}
+      </div>
+    </div>
   {% endfor %}
-</ul>
+</div>
