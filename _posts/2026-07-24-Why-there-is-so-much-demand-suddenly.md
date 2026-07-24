@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: "Why there is so much demand suddenly"
