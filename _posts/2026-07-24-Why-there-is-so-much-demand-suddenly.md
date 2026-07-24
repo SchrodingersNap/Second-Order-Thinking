@@ -2,6 +2,7 @@
 ---
 layout: default
 title: "Why there is so much demand suddenly"
+author: "asheesh"
 ---
 
 When I joined the plant in April 2026, life looked easy. There was demand, but it was manageable in general shift only, and things went smoothly in May and especially in June, where we mostly met demand very easily. But in July, we are struggling, and it seems demand is at least double our capacity to supply. One more thing is that demand for products which were rarely in demand over the last two months suddenly burst out. Take the example of transformer oil: most of the time only barrels were required, but now in the last 10 days we have bulk requirements of at least twice our capacity for producing it, creating a growing list of backlogs.
