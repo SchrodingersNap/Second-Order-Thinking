@@ -4,7 +4,6 @@ title: "How Human Cravings Drive Global Economics"
 author: "asheesh"
 ---
 
-_How a post-illness craving for street food explains multi-billion-dollar supply chain crashes._
 
 ## A Daily Routine Disrupted
 
