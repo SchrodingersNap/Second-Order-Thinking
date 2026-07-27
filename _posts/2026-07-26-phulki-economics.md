@@ -30,7 +30,8 @@ Notice, however, that 20 of those missed phulkis are gone forever. That is deman
 
 Now scale this up across an entire market. Suppose a viral outbreak hits your town, causing 50% of consumers to hold back simultaneously. In the first phase, the drought, the phulki vendor faces a massive demand deficit: half their usual stock goes to waste, and daily revenue plummets. Then comes the recovery phase, where half the town recovers or feels financially safe to spend at the exact same time. On day one, all that aggregated demand hits the market at once. A vendor equipped for a standard 500-phulki day is suddenly hit with a crowd demanding 1,500 phulkis, just as the local bike mechanic gets slammed with 50 overdue engine oil changes in a single morning.
 
-![[Pasted image 20260727122547.png]]
+![Description of picture]({{ site.baseurl }}/assets/bullwhip.png)
+
 ## The Bullwhip Effect
 
 Here is where localized demand turns into broader supply chain chaos. Lacking real-time data, the phulki vendor does not realize this crowd is just a one-day recovery binge; they mistake this surge for a permanent boom in business.
