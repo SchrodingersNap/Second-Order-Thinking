@@ -24,7 +24,7 @@ During your week of sickness, you missed roughly 35 phulkis (5 per day over 7 da
 > - **Demand Destruction:** The permanent loss of baseline sales during a disruption that can never be retroactively recovered.
 >     
 
-Notice, however, that 20 of those missed phulkis are gone forever. That is demand destruction. You cannot retroactively eat a week's worth of meals, just as stretching your bike's oil change by 1,000 km means you skipped an entire maintenance cycle over the bike's lifespan. The backlog surges, but baseline volume is permanently lost.
+Notice, however, that 25 of those missed phulkis are gone forever. That is demand destruction. You cannot retroactively eat a week's worth of meals, just as stretching your bike's oil change by 1,000 km means you skipped an entire maintenance cycle over the bike's lifespan. The backlog surges, but baseline volume is permanently lost.
 
 ## Scaling to Market-Wide Demand
 
