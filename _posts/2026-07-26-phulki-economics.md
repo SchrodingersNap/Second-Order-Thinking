@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "How Human Cravings Drive Global Economics"
 author: "asheesh"
 ---
