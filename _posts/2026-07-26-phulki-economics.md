@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: "How Human Cravings Drive Global Economics"
