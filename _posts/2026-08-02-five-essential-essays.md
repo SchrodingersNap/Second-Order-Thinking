@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Five Essential Essays for Re-Examining Your Assumptions"
-author: "asheesh"
+author: "a"
 ---
 
 When we practice second-order thinking, we try to look beyond immediate reactions and examine the deeper motives, power structures, and logical frameworks that govern human behavior. 
