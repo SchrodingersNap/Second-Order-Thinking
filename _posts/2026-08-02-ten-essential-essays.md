@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "10 Foundational Essays for Second-Order Thinking: Markets, Power, and Conscience"
-author: asheesh
+author: a
 ---
 ---
 To understand complex real-world problems, we have to look past immediate causes and examine the underlying systems—the incentive structures, historical habits, and emergent behaviors that govern human society. 
