@@ -27,7 +27,9 @@ Then, roughly two billion years ago, life made an evolutionary leap: **eukaryote
 
 Here, physics presented a lethal catch. In thermodynamics, diffusion time does not scale in a straight line with distance. It scales with the **square of the distance**:
 
-$$t = {{x^2}/{2D}}$$
+{% raw %}
+$$t = \frac{{x^2}}{2D}$$
+{% endraw %}
 
 If a cell becomes 10 times larger, diffusion takes **100 times longer**. If it becomes 1,000 times larger, diffusion takes **1,000,000 times longer**.
 
