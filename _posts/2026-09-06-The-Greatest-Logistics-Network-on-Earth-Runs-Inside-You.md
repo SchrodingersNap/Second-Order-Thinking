@@ -1,4 +1,7 @@
-# The Invisible Logistics Empire Inside You: Why Nature Beat Modern Supply Chains Two Billion Years Ago
+---
+layout: default
+title: "The Invisible Logistics Empire Inside You: Why Nature Beat Modern Supply Chains Two Billion Years Ago"
+---
 
 Look at your hand for five seconds. In that brief window, millions of heavy-duty freight carriers inside your cells just completed long-haul deliveries, switched multi-lane express tracks, parked living power plants directly into emergency power bays, and burned through millions of high-energy fuel packets without causing a single traffic jam.
 
