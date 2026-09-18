@@ -3,7 +3,7 @@ layout: default
 title: "Institutional Incentives Lead to Probity, Not Morality"
 ---
 
-While browsing the Central Vigilance Commission (CVC) website recently, two publications caught my attention: ‘Honesty is the Best Policy’ and ‘Professional Integrity: A Must’. Both present pictorial morality stories neatly packaged as civic lessons. In the first, an honest child is rewarded; in the second, a compromised official meets swift disgrace.
+While browsing the Central Vigilance Commission (CVC) website recently, two publications caught my attention: ‘Honesty is the Best Policy’ and ‘Professional Integrity: A Must’. Both present pictorial moral stories neatly packaged as civic lessons. In the first, an honest child is rewarded; in the second, a compromised official meets swift disgrace.
 
 It makes for a comforting scenario. It also has almost nothing to do with how a plant, or public agency actually runs.
 
