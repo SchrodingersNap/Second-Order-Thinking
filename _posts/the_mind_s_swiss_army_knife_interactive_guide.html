@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Mind's Swiss Army Knife — Razors & Mental Models</title>
+  <meta name="description" content="A curated, interactive cheat-sheet of 20 essential mental models, philosophical razors, and cognitive principles to cut through everyday chaos.">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(156, 163, 175, 0.4);
+      border-radius: 9999px;
+    }
+    .badge-glow {
+      box-shadow: 0 0 15px -3px rgba(34, 197, 94, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200 min-h-screen flex flex-col">
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200/80 dark:border-slate-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white shadow-sm font-bold text-lg">
+          🗡️
+        </div>
+        <div>
+          <h1 class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white leading-tight">
+            The Mind's Swiss Army Knife
+          </h1>
+          <p class="text-xs text-slate-500 dark:text-slate-400 hidden sm:block">Mental Models & Razors for Everyday Chaos</p>
+        </div>
+      </div>
+
+      <!-- Action items: Dark mode & Favorites toggle -->
+      <div class="flex items-center gap-2">
+        <button id="favFilterBtn" onclick="toggleFavoritesOnly()" class="px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 flex items-center gap-1.5 transition">
+          <span id="favStarIcon" class="text-amber-500">★</span>
+          <span id="favCountText">Favorites (0)</span>
+        </button>
+
+        <button id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle theme" class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition">
+          <svg id="sunIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg id="moonIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero & Explanatory Banner -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-10 shadow-xl border border-slate-800">
+      <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none text-9xl">🧠</div>
+      <div class="max-w-3xl space-y-4 relative z-10">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Curated Cheat-Sheet
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight text-white">
+          Stop Assuming Malice. <br class="hidden sm:inline">Start Shaving Away the Noise.
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Human nature defaults to assuming cunning plots, manipulation, and bad intentions behind every setback. In reality, modern life is shaped by fatigue, incentives, and cognitive blind spots. 
+          Use these <strong class="text-emerald-400 font-semibold">20 philosophical razors and principles</strong> as mental shortcuts to cut out overthinking, reduce anger, and navigate work, media, and human relationships with precision.
+        </p>
+        <div class="pt-2 flex flex-wrap gap-2 text-xs text-slate-400">
+          <span class="flex items-center gap-1">✨ Instant search</span>
+          <span class="mx-1">•</span>
+          <span class="flex items-center gap-1">★ Save top 3 to LocalStorage</span>
+          <span class="mx-1">•</span>
+          <span class="flex items-center gap-1">📋 One-click copy & share</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Controls: Search & Category Filter Tabs -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sticky top-16 z-30 bg-slate-50/90 dark:bg-slate-950/90 backdrop-blur-md transition-colors">
+    <div class="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
+      
+      <!-- Category Tabs -->
+      <div class="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 custom-scrollbar text-xs sm:text-sm font-medium">
+        <button onclick="setCategory('all')" data-cat="all" class="cat-tab px-3.5 py-2 rounded-xl bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 whitespace-nowrap shadow-sm transition">
+          All Models (<span id="count-all">20</span>)
+        </button>
+        <button onclick="setCategory('human')" data-cat="human" class="cat-tab px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 whitespace-nowrap transition">
+          👥 Human Nature (<span id="count-human">8</span>)
+        </button>
+        <button onclick="setCategory('digital')" data-cat="digital" class="cat-tab px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 whitespace-nowrap transition">
+          📡 Digital Noise (<span id="count-digital">7</span>)
+        </button>
+        <button onclick="setCategory('work')" data-cat="work" class="cat-tab px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 whitespace-nowrap transition">
+          💼 Work & Systems (<span id="count-work">5</span>)
+        </button>
+      </div>
+
+      <!-- Search Box -->
+      <div class="relative w-full md:w-72">
+        <input 
+          type="text" 
+          id="searchInput" 
+          oninput="handleSearch()"
+          placeholder="Search razors, quotes, tags..." 
+          class="w-full text-sm pl-9 pr-8 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 placeholder-slate-400 transition"
+        >
+        <span class="absolute left-3 top-2.5 text-slate-400 text-sm">🔍</span>
+        <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs">✕</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid of Cards -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-grow">
+    
+    <!-- Empty State -->
+    <div id="noResults" class="hidden text-center py-16">
+      <div class="text-5xl mb-3">🔍</div>
+      <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">No matching models found</h3>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Try adjusting your search terms or clearing your active filters.</p>
+      <button onclick="resetFilters()" class="mt-4 px-4 py-2 text-xs font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition">Reset all filters</button>
+    </div>
+
+    <!-- Cards Container -->
+    <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Cards dynamically generated via JavaScript -->
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-4 py-2.5 rounded-xl shadow-2xl text-xs sm:text-sm font-medium flex items-center gap-2 border border-slate-700 dark:border-slate-300">
+    <span id="toastIcon">📋</span>
+    <span id="toastMsg">Action completed</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-auto border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-8 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+      <p>© 2026 The Mind's Swiss Army Knife. Built to simplify thinking and cut through cognitive biases.</p>
+      <div class="flex items-center gap-3">
+        <button onclick="shareWebpage()" class="hover:text-emerald-500 transition flex items-center gap-1">
+          <span>📤</span> Share This Page
+        </button>
+        <span>•</span>
+        <button onclick="scrollToTop()" class="hover:text-emerald-500 transition">Back to top ↑</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script>
+    // Database of the 20 mental models and razors discussed
+    const MENTAL_MODELS = [
+      // CATEGORY 1: Human Nature & Perception
+      {
+        id: "hanlons-razor",
+        title: "Hanlon’s Razor",
+        coreQuote: "Never attribute to malice that which is adequately explained by stupidity.",
+        explanation: "When someone messes up or causes frustration, it is overwhelmingly caused by tiredness, carelessness, or misunderstanding—rarely a cunning, malicious conspiracy against you.",
+        category: "human",
+        categoryName: "Human Nature",
+        takeaway: "Lowers Stress",
+        color: "emerald"
+      },
+      {
+        id: "occams-razor",
+        title: "Occam’s Razor",
+        coreQuote: "Entities should not be multiplied without necessity.",
+        explanation: "When faced with competing explanations for the exact same event, the simplest one requiring the fewest convoluted assumptions is almost always the correct answer.",
+        category: "human",
+        categoryName: "Human Nature",
+        takeaway: "Simplifies Reality",
+        color: "teal"
+      },
+      {
+        id: "duck-test",
+        title: "The Duck Test",
+        coreQuote: "If it looks like a duck, swims like a duck, and quacks like a duck, it probably is a duck.",
+        explanation: "Avoid overcomplicating obvious scenarios with hyper-analytical excuses. Direct sensory evidence and common sense are often more reliable than complex theoretical explanations.",
+        category: "human",
+        categoryName: "Human Nature",
+        takeaway: "Common Sense",
+        color: "blue"
+      },
+      {
+        id: "cynical-genius",
+        title: "The Cynical Genius Illusion",
+        coreQuote: "Cynicism is often viewed as intelligence, but is usually just a defensive shield.",
+        explanation: "Assuming that everyone has a hidden agenda and that everything is a scam protects you from disappointment, but prevents you from taking calculated risks, trusting collaborators, and learning.",
+        category: "human",
+        categoryName: "Human Nature",
+        takeaway: "Emotional Freedom",
+        color: "amber"
+      },
+      {
+        id: "alders-razor",
+        title: "Alder’s Razor (Newton’s Flaming Laser Sword)",
+        coreQuote: "If something cannot be settled by experiment or observation, it is not worthy of debate.",
+        explanation: "Cuts off theoretical arguments that cannot have any real-world proof or consequences. Saves massive mental bandwidth by ignoring endless unprovable discussions.",
+        category: "human",
+        categoryName: "Human Nature",
+        takeaway: "Saves Time",
+        color: "rose"
+      },
+      {
+        id: "tocqueville-paradox",
+        title: "The Tocqueville Paradox",
+        coreQuote: "As social conditions improve, the standard by which they are judged becomes harsher.",
+        explanation: "When quality of life rises, societal expectations rise even faster. This explains why people in eras of unprecedented comfort and abundance often feel intensely dissatisfied.",
+        category: "human",
+        categoryName: "Human Nature",
+        takeaway: "Perspective",
+        color: "indigo"
+      },
+      {
+        id: "us-vs-them",
+        title: "The Us vs. Them Filter",
+        coreQuote: "We forgive all faults in our tribe, and assume worst motives in outsiders.",
+        explanation: "Objective critical thinking requires immense energy. The brain prefers an easy heuristic: assume allies are pure-hearted while opponents have sinister motives, blinding us to nuanced truth.",
+        category: "human",
+        categoryName: "Human Nature",
+        takeaway: "Critical Thinking",
+        color: "purple"
+      },
+      {
+        id: "messiah-effect",
+        title: "The Messiah Effect",
+        coreQuote: "People rarely believe in detailed policies; they believe in charismatic figureheads.",
+        explanation: "Complex geopolitical or economic realities are difficult to comprehend. Humans instinctively offload the hard labor of critical thinking onto strong, symbolic leaders who promise easy answers.",
+        category: "human",
+        categoryName: "Human Nature",
+        takeaway: "Media Literacy",
+        color: "cyan"
+      },
+
+      // CATEGORY 2: Information & Digital Noise
+      {
+        id: "hitchenss-razor",
+        title: "Hitchens’s Razor",
+        coreQuote: "What can be asserted without evidence can also be dismissed without evidence.",
+        explanation: "The burden of proof always rests squarely on the person making the claim. If someone offers wild speculation without supporting facts, you have zero obligation to waste time refuting it.",
+        category: "digital",
+        categoryName: "Digital Noise",
+        takeaway: "Cuts Arguments",
+        color: "emerald"
+      },
+      {
+        id: "sagan-standard",
+        title: "The Sagan Standard",
+        coreQuote: "Extraordinary claims require extraordinary evidence.",
+        explanation: "Mundane statements need mundane proof, but claims that upend established understanding require undeniable, verifiable data before being accepted as valid.",
+        category: "digital",
+        categoryName: "Digital Noise",
+        takeaway: "Truth Filter",
+        color: "teal"
+      },
+      {
+        id: "brandolinis-law",
+        title: "Brandolini’s Law (Bullshit Asymmetry)",
+        coreQuote: "The energy needed to refute bullshit is an order of magnitude larger than to produce it.",
+        explanation: "Fabricating nonsense takes seconds; debunking it requires hours of research, sources, and nuance. This explains why bad information spreads faster on the internet than accurate refutations.",
+        category: "digital",
+        categoryName: "Digital Noise",
+        takeaway: "Energy Saver",
+        color: "rose"
+      },
+      {
+        id: "cunninghams-law",
+        title: "Cunningham’s Law",
+        coreQuote: "The best way to get the right answer on the internet is to post the wrong answer.",
+        explanation: "Human ego is more compelled to correct someone else's blunder and demonstrate intellectual superiority than to answer a polite, honest question.",
+        category: "digital",
+        categoryName: "Digital Noise",
+        takeaway: "Social Hack",
+        color: "amber"
+      },
+      {
+        id: "sturgeons-law",
+        title: "Sturgeon’s Law",
+        coreQuote: "Ninety percent of everything is crap.",
+        explanation: "Whether reviewing books, movies, startup pitches, or social media takes: the vast majority will be mediocre. Acknowledge the 90% without anger, and patiently seek the 10% that is gold.",
+        category: "digital",
+        categoryName: "Digital Noise",
+        takeaway: "Curates Quality",
+        color: "blue"
+      },
+      {
+        id: "gell-mann-amnesia",
+        title: "Gell-Mann Amnesia Effect",
+        coreQuote: "You spot obvious errors in news about your field, yet trust the next page completely.",
+        explanation: "When you read an article on a topic you master, you spot glaring mistakes. Yet when you flip to an unfamiliar topic, you forget that the journalists likely apply the same faulty research.",
+        category: "digital",
+        categoryName: "Digital Noise",
+        takeaway: "Healthy Skepticism",
+        color: "purple"
+      },
+      {
+        id: "toxoplasma-of-rage",
+        title: "The Toxoplasma of Rage",
+        coreQuote: "The ideas that spread fastest are not the truest, but the most polarizing.",
+        explanation: "Algorithms reward emotional engagement above all else. Moral outrage and identity conflicts serve as the ultimate viral vector across modern social networks.",
+        category: "digital",
+        categoryName: "Digital Noise",
+        takeaway: "Digital Detox",
+        color: "rose"
+      },
+
+      // CATEGORY 3: Work, Systems & Business
+      {
+        id: "goodharts-law",
+        title: "Goodhart’s Law",
+        coreQuote: "When a measure becomes a target, it ceases to be a good measure.",
+        explanation: "The moment you tie bonuses or promotions to a specific metric (e.g. lines of code, call speed, page views), employees will optimize the metric while compromising the actual quality.",
+        category: "work",
+        categoryName: "Work & Systems",
+        takeaway: "Better Management",
+        color: "emerald"
+      },
+      {
+        id: "peter-principle",
+        title: "The Peter Principle (Promotion Trap)",
+        coreQuote: "Employees rise to the level of their respective incompetence.",
+        explanation: "Organizations promote individual stars based on their technical mastery in their current role until they end up in leadership positions they do not have the skills or temperament to handle.",
+        category: "work",
+        categoryName: "Work & Systems",
+        takeaway: "Team Building",
+        color: "indigo"
+      },
+      {
+        id: "parkinsons-law",
+        title: "Parkinson’s Law",
+        coreQuote: "Work expands so as to fill the time available for its completion.",
+        explanation: "If you give yourself three weeks to finish a slide deck that requires four hours, it will artificially swell in complexity, stress, and procrastination to consume the entire three weeks.",
+        category: "work",
+        categoryName: "Work & Systems",
+        takeaway: "Boosts Output",
+        color: "amber"
+      },
+      {
+        id: "golden-hammer",
+        title: "The Golden Hammer",
+        coreQuote: "If all you have is a hammer, everything looks like a nail.",
+        explanation: "Over-reliance on a single favorite tool or methodology. Marketers try to fix operational failures with rebranding; developers try to solve human cultural disputes with another software tool.",
+        category: "work",
+        categoryName: "Work & Systems",
+        takeaway: "Problem Solving",
+        color: "cyan"
+      },
+      {
+        id: "law-of-large-numbers",
+        title: "The Law of Large Numbers (Pattern Illusion)",
+        coreQuote: "With a large enough data set, any desired correlation can be manufactured.",
+        explanation: "In modern corporate big-data analytics, if you torture the numbers long enough, you will discover arbitrary patterns that support your existing bias, mistaking noise for strategic insight.",
+        category: "work",
+        categoryName: "Work & Systems",
+        takeaway: "Data Sanity",
+        color: "teal"
+      }
+    ];
+
+    // State
+    let currentCategory = 'all';
+    let searchQuery = '';
+    let showFavoritesOnly = false;
+    let favorites = JSON.parse(localStorage.getItem('minds_favorites') || '[]');
+
+    // Initialize UI
+    window.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      updateFavCount();
+      renderCards();
+    });
+
+    // Theme Management
+    function initTheme() {
+      const savedTheme = localStorage.getItem('minds_theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+        document.getElementById('sunIcon').classList.remove('hidden');
+        document.getElementById('moonIcon').classList.add('hidden');
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.getElementById('sunIcon').classList.add('hidden');
+        document.getElementById('moonIcon').classList.remove('hidden');
+      }
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('minds_theme', isDark ? 'dark' : 'light');
+      document.getElementById('sunIcon').classList.toggle('hidden', !isDark);
+      document.getElementById('moonIcon').classList.toggle('hidden', isDark);
+    }
+
+    // Category Tabs
+    function setCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-tab').forEach(btn => {
+        const isMatch = btn.getAttribute('data-cat') === cat;
+        if (isMatch) {
+          btn.className = 'cat-tab px-3.5 py-2 rounded-xl bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 whitespace-nowrap shadow-sm transition font-semibold';
+        } else {
+          btn.className = 'cat-tab px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 whitespace-nowrap transition';
+        }
+      });
+      renderCards();
+    }
+
+    // Search Handling
+    function handleSearch() {
+      const input = document.getElementById('searchInput');
+      searchQuery = input.value.trim().toLowerCase();
+      document.getElementById('clearSearchBtn').classList.toggle('hidden', searchQuery.length === 0);
+      renderCards();
+    }
+
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      searchQuery = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      renderCards();
+    }
+
+    // Favorites
+    function toggleFavorite(id, event) {
+      if (event) event.stopPropagation();
+      const index = favorites.indexOf(id);
+      if (index > -1) {
+        favorites.splice(index, 1);
+        showToast("Removed from favorites", "🗑️");
+      } else {
+        favorites.push(id);
+        showToast("Saved to favorites!", "★");
+      }
+      localStorage.setItem('minds_favorites', JSON.stringify(favorites));
+      updateFavCount();
+      renderCards();
+    }
+
+    function updateFavCount() {
+      document.getElementById('favCountText').innerText = `Favorites (${favorites.length})`;
+    }
+
+    function toggleFavoritesOnly() {
+      showFavoritesOnly = !showFavoritesOnly;
+      const btn = document.getElementById('favFilterBtn');
+      if (showFavoritesOnly) {
+        btn.classList.add('bg-amber-100', 'border-amber-300', 'dark:bg-amber-950/60', 'dark:border-amber-700');
+        showToast("Showing favorites only", "⭐");
+      } else {
+        btn.classList.remove('bg-amber-100', 'border-amber-300', 'dark:bg-amber-950/60', 'dark:border-amber-700');
+      }
+      renderCards();
+    }
+
+    // Render Cards
+    function renderCards() {
+      const grid = document.getElementById('cardsGrid');
+      const noResults = document.getElementById('noResults');
+
+      const filtered = MENTAL_MODELS.filter(item => {
+        // Category match
+        if (currentCategory !== 'all' && item.category !== currentCategory) return false;
+        
+        // Favorite filter
+        if (showFavoritesOnly && !favorites.includes(item.id)) return false;
+
+        // Search match
+        if (searchQuery) {
+          const matchTitle = item.title.toLowerCase().includes(searchQuery);
+          const matchQuote = item.coreQuote.toLowerCase().includes(searchQuery);
+          const matchExp = item.explanation.toLowerCase().includes(searchQuery);
+          const matchTakeaway = item.takeaway.toLowerCase().includes(searchQuery);
+          return matchTitle || matchQuote || matchExp || matchTakeaway;
+        }
+
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+      }
+
+      noResults.classList.add('hidden');
+
+      grid.innerHTML = filtered.map(item => {
+        const isFav = favorites.includes(item.id);
+        
+        return `
+          <article class="group relative rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-5 sm:p-6 shadow-sm hover:shadow-md hover:border-emerald-500/40 dark:hover:border-emerald-500/30 transition-all duration-200 flex flex-col justify-between">
+            <div>
+              <!-- Top Badges & Actions -->
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700">
+                  ${item.categoryName}
+                </span>
+
+                <div class="flex items-center gap-1">
+                  <!-- Bookmark / Favorite Button -->
+                  <button 
+                    onclick="toggleFavorite('${item.id}', event)" 
+                    title="${isFav ? 'Remove from favorites' : 'Add to favorites'}"
+                    class="p-1.5 rounded-lg text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition"
+                  >
+                    <span class="text-base ${isFav ? 'text-amber-500 font-bold' : ''}">${isFav ? '★' : '☆'}</span>
+                  </button>
+                  
+                  <!-- Copy Quote Button -->
+                  <button 
+                    onclick="copyQuote('${item.id}', event)" 
+                    title="Copy core quote"
+                    class="p-1.5 rounded-lg text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition"
+                  >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white tracking-tight mb-2">
+                ${item.title}
+              </h3>
+
+              <!-- Core Principle Quote -->
+              <div class="border-l-2 border-emerald-500/70 pl-3 my-2.5 py-0.5 bg-emerald-50/50 dark:bg-emerald-950/20 rounded-r-lg">
+                <p class="text-xs sm:text-sm font-semibold italic text-slate-700 dark:text-emerald-200/90 leading-snug">
+                  "${item.coreQuote}"
+                </p>
+              </div>
+
+              <!-- Practical Explanation -->
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-3">
+                ${item.explanation}
+              </p>
+            </div>
+
+            <!-- Bottom Pill: Practical Takeaway -->
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300 border border-emerald-200/50 dark:border-emerald-800/40">
+                ⚡ ${item.takeaway}
+              </span>
+              <button 
+                onclick="shareCard('${item.id}', event)" 
+                class="text-[11px] text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 font-medium transition"
+              >
+                Share Model →
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    // Reset all filters
+    function resetFilters() {
+      currentCategory = 'all';
+      searchQuery = '';
+      showFavoritesOnly = false;
+      document.getElementById('searchInput').value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      document.getElementById('favFilterBtn').classList.remove('bg-amber-100', 'border-amber-300', 'dark:bg-amber-950/60', 'dark:border-amber-700');
+      setCategory('all');
+    }
+
+    // Copy Quote via document.execCommand
+    function copyQuote(id, event) {
+      if (event) event.stopPropagation();
+      const model = MENTAL_MODELS.find(m => m.id === id);
+      if (!model) return;
+
+      const text = `${model.title}: "${model.coreQuote}" — ${model.explanation}`;
+      copyToClipboard(text);
+      showToast(`Copied quote for ${model.title}`, "📋");
+    }
+
+    // Share Card
+    function shareCard(id, event) {
+      if (event) event.stopPropagation();
+      const model = MENTAL_MODELS.find(m => m.id === id);
+      if (!model) return;
+
+      const shareText = `"${model.coreQuote}" — ${model.title}\n\nExplore all 20 mental models:`;
+      const url = window.location.href;
+
+      if (navigator.share) {
+        navigator.share({
+          title: model.title,
+          text: shareText,
+          url: url
+        }).catch(() => {
+          copyToClipboard(`${shareText} ${url}`);
+          showToast("Share text copied to clipboard!", "📋");
+        });
+      } else {
+        copyToClipboard(`${shareText} ${url}`);
+        showToast("Share text copied to clipboard!", "📋");
+      }
+    }
+
+    // Share Entire Webpage
+    function shareWebpage() {
+      const shareData = {
+        title: "The Mind's Swiss Army Knife",
+        text: "20 Essential Razors & Mental Models to cut through everyday chaos and overthinking:",
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData).catch(() => {
+          copyToClipboard(window.location.href);
+          showToast("Page link copied to clipboard!", "🔗");
+        });
+      } else {
+        copyToClipboard(window.location.href);
+        showToast("Page link copied to clipboard!", "🔗");
+      }
+    }
+
+    // Safe Clipboard copy helper
+    function copyToClipboard(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('Failed to copy', err);
+      }
+      document.body.removeChild(textarea);
+    }
+
+    // Toast Trigger
+    let toastTimeout;
+    function showToast(msg, icon = "✨") {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      const toastIcon = document.getElementById('toastIcon');
+
+      toastMsg.innerText = msg;
+      toastIcon.innerText = icon;
+
+      toast.classList.remove('opacity-0', 'translate-y-24');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-24');
+      }, 2500);
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
