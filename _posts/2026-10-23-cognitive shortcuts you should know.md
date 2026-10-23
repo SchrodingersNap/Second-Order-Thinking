@@ -1,7 +1,7 @@
 ---
 layout: post
 title: cognitive shortcuts you should know
-author: asheesh
+author: 
 ---
 
 ---
