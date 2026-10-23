@@ -5,9 +5,9 @@ author:
 ---
 
 ---
-Mental models, philosophical razors, and observational laws act as a Swiss Army knife for the mind. They help us cut through noise, avoid psychological traps, and understand why human beings behave the way they do.
+Mental models and razors help us cut through noise, avoid psychological traps, and understand why human beings behave the way they do.
 
-Below is an interconnected reference of core philosophical razors, behavioral heuristics, and organizational traps. 
+Below is the list of some of the razors and mental shortcuts:
 
 ---
 
