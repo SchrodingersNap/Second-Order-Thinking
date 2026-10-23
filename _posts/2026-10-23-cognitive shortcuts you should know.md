@@ -141,16 +141,3 @@ Structural failures in management, incentives, and operational frameworks.
   - Sifting through customer analytics until finding a coincidental correlation that validates a preexisting executive bias, mistaking statistical noise for genuine market signal.
 
 ---
-
-## Quick Reference Matrix
-
-| Model                       | Primary Category      | Trap to Avoid                         |
-| --------------------------- | --------------------- | ------------------------------------- |
-| **Hanlon's Razor**          | Attribution           | Paranoia & resentment                 |
-| **Occam's Razor**           | Epistemology          | Over-engineered explanations          |
-| **Hitchens's Razor**        | Logic & Debate        | Entertaining unsupported claims       |
-| **Parkinson's Law**         | Productivity          | Procrastination & scope bloat         |
-| **Goodhart's Law**          | Business / Metrics    | Gaming systems & distorted incentives |
-| **The Peter Principle**     | Organizational Design | Misaligned career progression         |
-| **The Golden Hammer**       | Problem Solving       | Narrow, dogmatic tool selection       |
-| **Cynical Genius Illusion** | Psychology            | Inaction masked as sophistication     |
