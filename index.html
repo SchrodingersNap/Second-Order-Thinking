@@ -1,44 +1,23 @@
 ---
 layout: default
+title: Home
 ---
+<section class="posts-section">
+  <h2 class="section-title">All Articles</h2>
 
-<style>
-  /* Hides the "View on GitHub" button */
-  .btn {
-    display: none !important;
-  }
-
-  /* Card styling */
-  .post-card {
-    border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-bottom: 16px;
-    background: #ffffff;
-  }
-  .post-card a {
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: #0366d6;
-  }
-  .post-meta {
-    font-size: 0.85rem;
-    color: #586069;
-    margin-top: 6px;
-  }
-</style>
-
-<h2>Latest Articles</h2>
-
-<div class="posts-list">
-  {% for post in site.posts %}
-    <div class="post-card">
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <div class="post-meta">
-        Published on {{ post.date | date: "%B %d, %Y" }}
-        {% if post.author %} • by {{ post.author }}{% endif %}
-      </div>
-    </div>
-  {% endfor %}
-</div>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li class="post-item">
+        <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+        <h3 class="post-link-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        {% if post.excerpt %}
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
+        {% endif %}
+      </li>
+    {% empty %}
+      <p>No posts published yet.</p>
+    {% endfor %}
+  </ul>
+</section>
