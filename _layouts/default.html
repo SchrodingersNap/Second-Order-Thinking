@@ -3,8 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
+  
+  {% assign page_title = page.title | default: site.title %}
+  {% assign page_description = page.excerpt | default: page.content | default: site.description | strip_html | normalize_whitespace | truncate: 160 %}
+  {% assign page_url = page.url | absolute_url %}
+
+  <title>{{ page_title }} | {{ site.title }}</title>
+
+  <!-- Open Graph Meta Tags (Used by WhatsApp, Twitter/X, LinkedIn, iMessage) -->
+  <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:url" content="{{ page_url }}">
+
+  <!-- Standard meta tags -->
+  <meta name="description" content="{{ page_description }}">
+
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body>
