@@ -1,6 +1,14 @@
-title:
-description:
-theme: jekyll-theme-cayman
-url: "https://schrodingersnap.github.io"
-baseurl: ""
-author: ""
+title: "SchrodingersNap"
+description: "Personal essays, logistics, economics, and cognitive models."
+baseurl: "/blog" # If your site is username.github.io/blog; set to "" if using username.github.io
+url: "https://SchrodingersNap.github.io"
+
+# Permalink style for clean URLs (e.g., /blog/phulki-economics/)
+permalink: /:title/
+
+# Ensures posts dated today or future timezones show immediately
+future: true
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
